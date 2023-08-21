@@ -6,6 +6,9 @@
             Receita 1
         </title>
         <style>
+            .floatLeft { width: 50%; float: left; }
+            .floatRight {width: 50%; float: right; }
+            .container { overflow: hidden; }
             #customers {
                 font-family: Arial, Helvetica, sans-serif;
                 border-collapse: collapse;
@@ -56,6 +59,41 @@
                 <td>$100</td>
             </tr>
         </table>
+        <br/>
+        <div class="container">
+            <div class="floatLeft">
+                <tr>
+                    <table id="customers">
+                        <tr>
+                            <td class="box3_t">
+                                Cabeçalho 1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="box3_b">
+                                texto 2
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
+            </div>
+            <div class="floatRight">
+                <tr>
+                    <table id="customers">
+                        <tr>
+                            <td class="box4_t">
+                                Cabeçalho 2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="box4_b">
+                                Texto 3
+                            </td>
+                        </tr>
+                    </table>
+                </tr>
+            </div>
+        </div>
     </body>
 </html>
 

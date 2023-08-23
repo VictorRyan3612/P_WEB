@@ -1,7 +1,10 @@
 p.linhas{
-    color: red;
+    color: blue;
 }
 
+p.mote{
+    color: red;
+}
 /* "." seleciona as classes */
 .container {
     overflow: hidden;

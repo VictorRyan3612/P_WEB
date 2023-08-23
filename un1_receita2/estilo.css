@@ -56,3 +56,28 @@ p.mote{
 #customers tr:hover {
     background-color: #10d520;
 }
+
+
+
+/* 
+Adaptado de Vinicius disponível em
+https://github.com/ViniciusMaiaM/Pweb/blob/main/exercises/firstUnit/recipe2/style.css
+*/
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+a::selection{
+    color: rgb(126, 0, 0);
+}
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+

@@ -1,0 +1,17 @@
+#tablebebidas th {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#tablebebidas a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+#tablebebidas a:hover {
+    color: orange;
+    text-decoration: underline;
+}

@@ -6,6 +6,15 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div>Carregando cervejas...</div>
-    </body>
+        <div id="teste script">
+            <button id="botao" onclick="carregarDiv()">
+                Carregando cervejas...
+            </button>
+        </div>
+    <script>
+        function carregarDiv(){
+            let div = document.getElementById("teste script")
+            div.innerHTML = `<h1>Guinness</h1>`
+        }
+    </script>
 </html>

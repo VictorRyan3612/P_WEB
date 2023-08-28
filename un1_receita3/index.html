@@ -6,17 +6,19 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div id="teste script">
+        <div id="botaoDiv">
             <button id="botaoCarregar">
                 Carregando cervejas...
             </button>
         </div>
+        <div id="nomeCervejaDiv">
+        </div>
     <script>
         function carregarDiv(){
-            let div = document.getElementById("teste script")
-            div.innerHTML = `<h1>Guinness</h1>`
+            let CervejaDiv = document.getElementById("nomeCervejaDiv");
+            CervejaDiv.innerHTML = `<h1>Guinness</h1>`;
         }
-        let botao = document.getElementById("botaoCarregar")
-        botao.onclick = carregarDiv
+        let botao = document.getElementById("botaoCarregar");
+        botao.onclick = carregarDiv;
     </script>
 </html>

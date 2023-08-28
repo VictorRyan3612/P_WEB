@@ -6,13 +6,10 @@
         <meta charset="UTF-8">
         <style>
             #nomeCervejaDiv {
-                -webkit-transition: opacity .5s ease-in-out;
-                -moz-transition: opacity .5s ease-in-out;
-                -ms-transition: opacity .5s ease-in-out;
-                -o-transition: opacity .5s ease-in-out;
-                transition: opacity .5s ease-in-out;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
             }
-            </style>
+        </style>
     </head>
 
     <body>
@@ -21,24 +18,21 @@
                 Carregando cervejas...
             </button>
         </div>
-        <div id="nomeCervejaDiv">
+        <div 
+            id="nomeCervejaDiv">
         </div>
+    </body>
+
     <script>
         let isNomeExibido = false;
+        let CervejaDiv = document.getElementById("nomeCervejaDiv");
 
-        
         function carregarDiv(){
-            let CervejaDiv = document.getElementById("nomeCervejaDiv");
-            CervejaDiv.style.opacity = 0;
-            if (!isNomeExibido) {
-                CervejaDiv.innerHTML = `<h1>Guinness</h1>`;
-                CervejaDiv.style.opacity = 1;
-            } else {
-                CervejaDiv.innerHTML = '';
-                CervejaDiv.style.opacity = 0;
-            }
+            CervejaDiv.style.opacity = isNomeExibido ? 0 : 1;
+            CervejaDiv.innerHTML = isNomeExibido ? '' : '<h1>Guinness</h1>';
             isNomeExibido = !isNomeExibido;
         }
+        
         let botao = document.getElementById("botaoCarregar");
         botao.onclick = carregarDiv;
     </script>

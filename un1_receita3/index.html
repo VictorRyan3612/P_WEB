@@ -28,11 +28,20 @@
         let CervejaDiv = document.getElementById("nomeCervejaDiv");
 
         function carregarDiv(){
-            CervejaDiv.style.opacity = isNomeExibido ? 0 : 1;
-            CervejaDiv.innerHTML = isNomeExibido ? '' : '<h1>Guinness</h1>';
+            if (isNomeExibido) {
+                CervejaDiv.style.opacity = 0;
+                setTimeout(() => {
+                    CervejaDiv.innerHTML = '';
+                }, 500);
+            } else {
+                CervejaDiv.innerHTML = '<h1>Guinness</h1>';
+                setTimeout(() => {
+                    CervejaDiv.style.opacity = 1;
+                }, 1);
+            }
             isNomeExibido = !isNomeExibido;
         }
-        
+
         let botao = document.getElementById("botaoCarregar");
         botao.onclick = carregarDiv;
     </script>

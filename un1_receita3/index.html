@@ -4,7 +4,17 @@
     <head>
         <link href="estilo.css" rel="stylesheet">
         <meta charset="UTF-8">
+        <style>
+            #nomeCervejaDiv {
+                -webkit-transition: opacity .5s ease-in-out;
+                -moz-transition: opacity .5s ease-in-out;
+                -ms-transition: opacity .5s ease-in-out;
+                -o-transition: opacity .5s ease-in-out;
+                transition: opacity .5s ease-in-out;
+            }
+            </style>
     </head>
+
     <body>
         <div id="botaoDiv">
             <button id="botaoCarregar">
@@ -15,12 +25,17 @@
         </div>
     <script>
         let isNomeExibido = false;
+
+        
         function carregarDiv(){
             let CervejaDiv = document.getElementById("nomeCervejaDiv");
+            CervejaDiv.style.opacity = 0;
             if (!isNomeExibido) {
                 CervejaDiv.innerHTML = `<h1>Guinness</h1>`;
+                CervejaDiv.style.opacity = 1;
             } else {
                 CervejaDiv.innerHTML = '';
+                CervejaDiv.style.opacity = 0;
             }
             isNomeExibido = !isNomeExibido;
         }

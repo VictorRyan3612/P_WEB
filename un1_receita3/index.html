@@ -14,9 +14,15 @@
         <div id="nomeCervejaDiv">
         </div>
     <script>
+        let isNomeExibido = false;
         function carregarDiv(){
             let CervejaDiv = document.getElementById("nomeCervejaDiv");
-            CervejaDiv.innerHTML = `<h1>Guinness</h1>`;
+            if (!isNomeExibido) {
+                CervejaDiv.innerHTML = `<h1>Guinness</h1>`;
+            } else {
+                CervejaDiv.innerHTML = '';
+            }
+            isNomeExibido = !isNomeExibido;
         }
         let botao = document.getElementById("botaoCarregar");
         botao.onclick = carregarDiv;

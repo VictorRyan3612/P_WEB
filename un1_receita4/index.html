@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="estilo.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <style>
+            #nomeCervejaDiv {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="botaoDiv">
+            <button id="botaoCarregar">
+                Carregando cervejas...
+            </button>
+        </div>
+        <div 
+            id="nomeCervejaDiv">
+        </div>
+    </body>
+
+    <script>
+        let isNomeExibido = false;
+        let CervejaDiv = document.getElementById("nomeCervejaDiv");
+
+        function carregarDiv(){
+            if (isNomeExibido) {
+                CervejaDiv.style.opacity = 0;
+                setTimeout(() => {
+                    CervejaDiv.innerHTML = '';
+                }, 500);
+            } else {
+                CervejaDiv.innerHTML = '<h1>Guinness</h1>';
+                setTimeout(() => {
+                    CervejaDiv.style.opacity = 1;
+                }, 1);
+            }
+            isNomeExibido = !isNomeExibido;
+        }
+
+        let botao = document.getElementById("botaoCarregar");
+        botao.onclick = carregarDiv;
+    </script>
+</html>

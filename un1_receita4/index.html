@@ -2,6 +2,9 @@
 
 <html>
     <head>
+        <title>
+            Receita 4
+        </title>
         <link href="estilo.css" rel="stylesheet">
         <meta charset="UTF-8">
         <style>
@@ -37,7 +40,9 @@
                 }, 500);
             } else {
                 setTimeout(() => {
-                    CervejaDiv.innerHTML = `<h1>${cervejas.join(", ")}</h1>`;
+                    let cervejasHtml = [`<h1>${cervejas[0]}</h1>`,`<h1>${cervejas[1]}</h1>`, `<h1>${cervejas[2]}</h1>`] 
+                    CervejaDiv.innerHTML = `<h1>${cervejasHtml.join("\n")}</h1>`;
+                    
                     CervejaDiv.style.opacity = 1;
                 }, 1);
             }

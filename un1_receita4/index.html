@@ -31,6 +31,10 @@
         
         let isNomeExibido = false;
         let CervejaDiv = document.getElementById("nomeCervejaDiv");
+        
+        function transformar(item){
+            return `<h1>${item}</h1>`
+        }
 
         function carregarDiv(){
             if (isNomeExibido) {
@@ -40,8 +44,8 @@
                 }, 500);
             } else {
                 setTimeout(() => {
-                    let cervejasHtml = [`<h1>${cervejas[0]}</h1>`,`<h1>${cervejas[1]}</h1>`, `<h1>${cervejas[2]}</h1>`] 
-                    CervejaDiv.innerHTML = `<h1>${cervejasHtml.join("\n")}</h1>`;
+                    let cervejasHtml = cervejas.map(transformar) 
+                    CervejaDiv.innerHTML = `<h1>${cervejasHtml.join("\n\n")}</h1>`;
                     
                     CervejaDiv.style.opacity = 1;
                 }, 1);

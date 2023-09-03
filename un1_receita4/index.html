@@ -20,6 +20,9 @@
          <button id="botaoCarregar">
             Carregando cervejas...
          </button>
+         <button id="botaoOrdenar">
+            Mostrar Cervejas Ordenadas
+         </button>
       </div>
       <div id="nomeCervejaDiv">
       </div>
@@ -52,7 +55,13 @@
          isNomeExibido = !isNomeExibido;
       }
 
-      let botao = document.getElementById("botaoCarregar");
-      botao.addEventListener("click", carregarDiv) 
+      let botaoCarregar = document.getElementById("botaoCarregar");
+      botaoCarregar.addEventListener("click", carregarDiv);
+
+      let botaoOrdenar = document.getElementById("botaoOrdenar");
+      botaoOrdenar.addEventListener("click", () => {
+         cervejas.sort(); // Ordena o array alfabeticamente
+         carregarDiv(); // Chama a função para exibir as cervejas ordenadas
+      });
    </script>
 </html>

@@ -27,21 +27,19 @@
             Embaralhar Cervejas
          </button>
       </div>
+      </br>
       <div id="nomeCervejaDiv">
       </div>
    </body>
 
    <script>
-      let cervejas = ["Guiness", "Desperados", "Becks"]
+      const cervejas = ["Guiness", "Desperados", "Becks"]
       
       let isNomeExibido = false;
-      let CervejaDiv = document.getElementById("nomeCervejaDiv");
+      const CervejaDiv = document.getElementById("nomeCervejaDiv");
       
-      function transformar(item){
-         return `<tr><td class="cerveja">${item}</td></tr>`;
-      }
 
-      function carregarDiv(cervejasArray){
+      const carregarDiv = (cervejasArray) =>{
          if (isNomeExibido) {
             CervejaDiv.style.opacity = 0;
             setTimeout(() => {
@@ -49,7 +47,7 @@
             }, 500);
          } else {
             setTimeout(() => {
-               let cervejasHtml = cervejasArray.map(transformar) 
+               let cervejasHtml = cervejasArray.map(item =>`<tr><td class="cerveja">${item}</td></tr>`) 
                CervejaDiv.innerHTML = `<table>${cervejasHtml.join("")}</table>`;
                
                CervejaDiv.style.opacity = 1;
@@ -58,23 +56,24 @@
          isNomeExibido = !isNomeExibido;
       }
 
-      let botaoCarregar = document.getElementById("botaoCarregar");
+      const botaoCarregar = document.getElementById("botaoCarregar");
       botaoCarregar.addEventListener("click", () => {
-         carregarDiv(cervejas); // Exibe o vetor original
+         const cervejasCopia = [...cervejas]; // Cria uma cópia do vetor original
+         carregarDiv(cervejasCopia); // Exibe o vetor original
       });
 
 
-      let botaoOrdenar = document.getElementById("botaoOrdenar");
+      const botaoOrdenar = document.getElementById("botaoOrdenar");
       botaoOrdenar.addEventListener("click", () => {
-         let cervejasOrdenadas = [...cervejas]; // Cria uma cópia do vetor original
+         const cervejasOrdenadas = [...cervejas]; // Cria uma cópia do vetor original
          cervejasOrdenadas.sort(); // Ordena o vetor de cervejas ordenadas alfabeticamente
          carregarDiv(cervejasOrdenadas); // Exibe o vetor de cervejas ordenadas
       });
 
       
-      let botaoEmbaralhar = document.getElementById("botaoEmbaralhar");
+      const botaoEmbaralhar = document.getElementById("botaoEmbaralhar");
       botaoEmbaralhar.addEventListener("click", () => {
-         let cervejasEmbaralhadas = [...cervejas]; // Cria uma cópia do vetor original
+         const cervejasEmbaralhadas = [...cervejas]; // Cria uma cópia do vetor original
          cervejasEmbaralhadas.sort(() => Math.random() - 0.5); // Embaralha o vetor aleatoriamente
          carregarDiv(cervejasEmbaralhadas); // Exibe o vetor de cervejas embaralhadas
       });

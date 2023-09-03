@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>
-            Receita 4
-        </title>
-        <link href="estilo.css" rel="stylesheet">
-        <meta charset="UTF-8">
-        <style>
-            #nomeCervejaDiv {
-                opacity: 0;
-                transition: opacity 0.5s ease-in-out;
-            }
-        </style>
-    </head>
+   <head>
+      <title>
+         Receita 4
+      </title>
+      <link href="estilo.css" rel="stylesheet">
+      <meta charset="UTF-8">
+      <style>
+         #nomeCervejaDiv {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+         }
+      </style>
+   </head>
 
-    <body>
-        <div id="botaoDiv">
-            <button id="botaoCarregar">
-                Carregando cervejas...
-            </button>
-        </div>
-        <div 
-            id="nomeCervejaDiv">
-        </div>
-    </body>
+   <body>
+      <div id="botaoDiv">
+         <button id="botaoCarregar">
+            Carregando cervejas...
+         </button>
+      </div>
+      <div id="nomeCervejaDiv">
 
-    <script>
-        let cervejas = ["Guiness", "Desperados", "Becks"]
-        
-        let isNomeExibido = false;
-        let CervejaDiv = document.getElementById("nomeCervejaDiv");
-        
-        function transformar(item){
-            return `<h1>${item}</h1>`
-        }
+      </div>
+   </body>
 
-        function carregarDiv(){
-            if (isNomeExibido) {
-                CervejaDiv.style.opacity = 0;
-                setTimeout(() => {
-                    CervejaDiv.innerHTML = '';
-                }, 500);
-            } else {
-                setTimeout(() => {
-                    let cervejasHtml = cervejas.map(transformar) 
-                    CervejaDiv.innerHTML = `<h1>${cervejasHtml.join("\n\n")}</h1>`;
-                    
-                    CervejaDiv.style.opacity = 1;
-                }, 1);
-            }
-            isNomeExibido = !isNomeExibido;
-        }
+   <script>
+      let cervejas = ["Guiness", "Desperados", "Becks"]
+      
+      let isNomeExibido = false;
+      let CervejaDiv = document.getElementById("nomeCervejaDiv");
+      
+      function transformar(item){
+         return `<h1>${item}</h1>`
+      }
 
-        let botao = document.getElementById("botaoCarregar");
-        botao.addEventListener("click", carregarDiv) 
-    </script>
+      function carregarDiv(){
+         if (isNomeExibido) {
+            CervejaDiv.style.opacity = 0;
+            setTimeout(() => {
+               CervejaDiv.innerHTML = '';
+            }, 500);
+         } else {
+            setTimeout(() => {
+               let cervejasHtml = cervejas.map(transformar) 
+               CervejaDiv.innerHTML = `<h1>${cervejasHtml.join("\n\n")}</h1>`;
+               
+               CervejaDiv.style.opacity = 1;
+            }, 1);
+         }
+         isNomeExibido = !isNomeExibido;
+      }
+
+      let botao = document.getElementById("botaoCarregar");
+      botao.addEventListener("click", carregarDiv) 
+   </script>
 </html>

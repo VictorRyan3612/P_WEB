@@ -33,7 +33,7 @@
       let CervejaDiv = document.getElementById("nomeCervejaDiv");
       
       function transformar(item){
-         return `<h1>${item}</h1>`
+         return `<div class="cerveja">${item}</div>`
       }
 
       function carregarDiv(){
@@ -45,7 +45,7 @@
          } else {
             setTimeout(() => {
                let cervejasHtml = cervejas.map(transformar) 
-               CervejaDiv.innerHTML = `<h1>${cervejasHtml.join("\n\n")}</h1>`;
+               CervejaDiv.innerHTML = `<div>${cervejasHtml.join("\n\n")}</div>`;
                
                CervejaDiv.style.opacity = 1;
             }, 1);

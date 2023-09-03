@@ -22,7 +22,6 @@
          </button>
       </div>
       <div id="nomeCervejaDiv">
-
       </div>
    </body>
 
@@ -33,7 +32,7 @@
       let CervejaDiv = document.getElementById("nomeCervejaDiv");
       
       function transformar(item){
-         return `<div class="cerveja">${item}</div>`
+         return `<tr><td class="cerveja">${item}</td></tr>`;
       }
 
       function carregarDiv(){
@@ -45,7 +44,7 @@
          } else {
             setTimeout(() => {
                let cervejasHtml = cervejas.map(transformar) 
-               CervejaDiv.innerHTML = `<div>${cervejasHtml.join("\n\n")}</div>`;
+               CervejaDiv.innerHTML = `<table>${cervejasHtml.join("")}</table>`;
                
                CervejaDiv.style.opacity = 1;
             }, 1);

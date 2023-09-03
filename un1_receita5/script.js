@@ -42,3 +42,23 @@ botaoEmbaralhar.addEventListener("click", () => {
    cervejasEmbaralhadas.sort(() => Math.random() - 0.5); // Embaralha o vetor aleatoriamente
    carregarDiv(cervejasEmbaralhadas); // Exibe o vetor de cervejas embaralhadas
 });
+
+const linkCarregar = document.getElementById("linkCarregar");
+linkCarregar.addEventListener("click", () => {
+   const cervejasCopia = [...cervejas]; // Cria uma cópia do vetor original
+   carregarDiv(cervejasCopia); // Exibe o vetor original
+});
+
+const linkOrdenar = document.getElementById("linkOrdenar");
+linkOrdenar.addEventListener("click", () => {
+   const cervejasOrdenadas = [...cervejas]; // Cria uma cópia do vetor original
+   cervejasOrdenadas.sort(); // Ordena o vetor de cervejas ordenadas alfabeticamente
+   carregarDiv(cervejasOrdenadas); // Exibe o vetor de cervejas ordenadas
+});
+
+const linkEmbaralhar = document.getElementById("linkEmbaralhar");
+linkEmbaralhar.addEventListener("click", () => {
+   const cervejasEmbaralhadas = [...cervejas]; // Cria uma cópia do vetor original
+   cervejasEmbaralhadas.sort(() => Math.random() - 0.5); // Embaralha o vetor aleatoriamente
+   carregarDiv(cervejasEmbaralhadas); // Exibe o vetor de cervejas embaralhadas
+});

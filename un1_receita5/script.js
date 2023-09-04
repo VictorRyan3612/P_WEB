@@ -21,44 +21,40 @@ const carregarDiv = (cervejasArray) =>{
    isNomeExibido = !isNomeExibido;
 }
 
-const botaoCarregar = document.getElementById("botaoCarregar");
-botaoCarregar.addEventListener("click", () => {
+const carregarCallback = () => {
    const cervejasCopia = [...cervejas]; // Cria uma cópia do vetor original
    carregarDiv(cervejasCopia); // Exibe o vetor original
-});
+};
+
+const ordenarCallback = () => {
+   const cervejasOrdenadas = [...cervejas]; // Cria uma cópia do vetor original
+   cervejasOrdenadas.sort(); // Ordena o vetor de cervejas ordenadas alfabeticamente
+   carregarDiv(cervejasOrdenadas); // Exibe o vetor de cervejas ordenadas
+}
+
+const embaralharCallback = () => {
+   const cervejasEmbaralhadas = [...cervejas]; // Cria uma cópia do vetor original
+   cervejasEmbaralhadas.sort(() => Math.random() - 0.5); // Embaralha o vetor aleatoriamente
+   carregarDiv(cervejasEmbaralhadas);
+}
+
+const botaoCarregar = document.getElementById("botaoCarregar");
+botaoCarregar.addEventListener("click", carregarCallback);
 
 
 const botaoOrdenar = document.getElementById("botaoOrdenar");
-botaoOrdenar.addEventListener("click", () => {
-   const cervejasOrdenadas = [...cervejas]; // Cria uma cópia do vetor original
-   cervejasOrdenadas.sort(); // Ordena o vetor de cervejas ordenadas alfabeticamente
-   carregarDiv(cervejasOrdenadas); // Exibe o vetor de cervejas ordenadas
-});
+botaoOrdenar.addEventListener("click", ordenarCallback);
 
 
 const botaoEmbaralhar = document.getElementById("botaoEmbaralhar");
-botaoEmbaralhar.addEventListener("click", () => {
-   const cervejasEmbaralhadas = [...cervejas]; // Cria uma cópia do vetor original
-   cervejasEmbaralhadas.sort(() => Math.random() - 0.5); // Embaralha o vetor aleatoriamente
-   carregarDiv(cervejasEmbaralhadas); // Exibe o vetor de cervejas embaralhadas
-});
+botaoEmbaralhar.addEventListener("click", embaralharCallback);
 
 const linkCarregar = document.getElementById("linkCarregar");
-linkCarregar.addEventListener("click", () => {
-   const cervejasCopia = [...cervejas]; // Cria uma cópia do vetor original
-   carregarDiv(cervejasCopia); // Exibe o vetor original
-});
+linkCarregar.addEventListener("click", carregarCallback);
+
 
 const linkOrdenar = document.getElementById("linkOrdenar");
-linkOrdenar.addEventListener("click", () => {
-   const cervejasOrdenadas = [...cervejas]; // Cria uma cópia do vetor original
-   cervejasOrdenadas.sort(); // Ordena o vetor de cervejas ordenadas alfabeticamente
-   carregarDiv(cervejasOrdenadas); // Exibe o vetor de cervejas ordenadas
-});
+linkOrdenar.addEventListener("click", ordenarCallback);
 
 const linkEmbaralhar = document.getElementById("linkEmbaralhar");
-linkEmbaralhar.addEventListener("click", () => {
-   const cervejasEmbaralhadas = [...cervejas]; // Cria uma cópia do vetor original
-   cervejasEmbaralhadas.sort(() => Math.random() - 0.5); // Embaralha o vetor aleatoriamente
-   carregarDiv(cervejasEmbaralhadas); // Exibe o vetor de cervejas embaralhadas
-});
+linkEmbaralhar.addEventListener("click", embaralharCallback);

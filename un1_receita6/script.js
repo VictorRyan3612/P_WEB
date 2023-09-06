@@ -27,6 +27,14 @@ const carregarDiv = (cervejasArray) =>{
       }, 500);
    } else {
       setTimeout(() => {
+
+      // Modo 2 ↓
+      // let itensHtml  = cervejasArray.map(({name,alcohol}) => `<tr><td class="cerveja">${name} -- ${alcohol}</td></tr>` )
+      
+      // Modo 3 ↓
+      // const itensHtml = cervejasArray.map( item => `<tr><td class="cerveja">${item['name']} -- ${item['alcohol']}</td></tr>` )
+
+
       let itensHtml  = cervejasArray.map(item =>`<tr><td class="cerveja">${item.name} -- ${item.alcohol}</td></tr>`) 
       CervejaDiv.innerHTML = `<table>${itensHtml.join("")}</table>`;
       

@@ -1,4 +1,19 @@
-const cervejas = ["Guiness", "Desperados", "Becks"]
+let cervejas = [
+   {
+      name: "Guiness",
+      alcohol: "10%"           
+   }, 
+   {
+      name: "Desperados",
+
+      alcohol: "6%"               
+   }, 
+   {
+      name: "Becks",
+      alcohol: "5%"               
+   }
+]
+
 
 let isNomeExibido = false;
 const CervejaDiv = document.getElementById("nomeCervejaDiv");
@@ -12,8 +27,8 @@ const carregarDiv = (cervejasArray) =>{
       }, 500);
    } else {
       setTimeout(() => {
-      let cervejasHtml = cervejasArray.map(item =>`<tr><td class="cerveja">${item}</td></tr>`) 
-      CervejaDiv.innerHTML = `<table>${cervejasHtml.join("")}</table>`;
+      let itensHtml  = cervejasArray.map(item =>`<tr><td class="cerveja">${item.name} -- ${item.alcohol}</td></tr>`) 
+      CervejaDiv.innerHTML = `<table>${itensHtml.join("")}</table>`;
       
       CervejaDiv.style.opacity = 1;
       }, 1);

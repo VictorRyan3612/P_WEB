@@ -18,6 +18,15 @@ table {
     text-align: center; /* Alinhamento central do texto */
 }
 
+.cerveja_colunas {
+    color: rgb(40, 40, 38);
+    height: 40px;
+    font-size: 40px;
+    background-color: #019022; /* Cor de fundo das células das cervejas */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda das células */
+    text-align: center; /* Alinhamento central do texto */
+}
 .cerveja:nth-child(even) {
     background-color: #0c57c0; /* Cor de fundo alternada para células pares */
 }

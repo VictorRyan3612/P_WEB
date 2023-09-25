@@ -1,17 +1,22 @@
 let cervejas = [
    {
       name: "Guiness",
-      alcohol: "10%"           
+      alcohol: "10%",
+      style: "Red Ale",
+      ibu: "15"
    }, 
    {
       name: "Desperados",
-
-      alcohol: "6%"               
+      alcohol: "6%",
+      style: "English IPA",
+      ibu: "30"
    }, 
    {
       name: "Becks",
-      alcohol: "5%"               
-   }
+      alcohol: "5%",
+      style: "Imperial Stout",
+      ibu: "45"
+   },
 ]
 
 
@@ -35,8 +40,22 @@ const carregarDiv = (cervejasArray) =>{
       // const itensHtml = cervejasArray.map( item => `<tr><td class="cerveja">${item['name']} -- ${item['alcohol']}</td></tr>` )
 
 
-      let itensHtml  = cervejasArray.map(item =>`<tr><td class="cerveja">${item.name} -- ${item.alcohol}</td></tr>`) 
-      CervejaDiv.innerHTML = `<table>${itensHtml.join("")}</table>`;
+      let itensHtml = `
+         <tr class="cerveja_colunas">
+            <th>Nome</th>
+            <th>Álcool</th>
+            <th>Estilo</th>
+            <th>IBU</th>
+         </tr>
+         ${cervejasArray.map(item =>`
+         <tr class="cerveja">
+            <td>${item.name}</td>
+            <td>${item.alcohol}</td>
+            <td>${item.style}</td>
+            <td>${item.ibu}</td>
+         </tr>`).join('')}
+      `;
+      CervejaDiv.innerHTML = `<table>${itensHtml}</table>`;
       
       CervejaDiv.style.opacity = 1;
       }, 1);

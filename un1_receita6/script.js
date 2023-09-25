@@ -23,7 +23,7 @@ let cervejas = [
 let isNomeExibido = false;
 
 
-const carregarDiv = (cervejasArray, id="CervejaDiv") =>{
+const carregarDiv = (cervejasArray, id="CervejaDiv", cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"]) =>{
    const CervejaDiv = document.getElementById(id);
    if (isNomeExibido) {
       CervejaDiv.style.opacity = 0;
@@ -42,10 +42,10 @@ const carregarDiv = (cervejasArray, id="CervejaDiv") =>{
 
       let itensHtml = `
          <tr class="cerveja_colunas">
-            <th>Nome</th>
-            <th>Álcool</th>
-            <th>Estilo</th>
-            <th>IBU</th>
+            <th>${cabecalhos[0]}</th>
+            <th>${cabecalhos[1]}</th>
+            <th>${cabecalhos[2]}</th>
+            <th>${cabecalhos[3]}</th>
          </tr>
          ${cervejasArray.map(item =>`
          <tr class="cerveja">

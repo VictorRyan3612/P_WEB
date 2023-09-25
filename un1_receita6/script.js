@@ -49,10 +49,10 @@ const carregarDiv = (cervejasArray, id="CervejaDiv", cabecalhos = ["Nome", "Álc
          </tr>
          ${cervejasArray.map(item =>`
          <tr class="cerveja">
-            <td>${item.name}</td>
-            <td>${item.alcohol}</td>
-            <td>${item.style}</td>
-            <td>${item.ibu}</td>
+            <td>${item.name || ''}</td>
+            <td>${item.alcohol || ''}</td>
+            <td>${item.style || ''}</td>
+            <td>${item.ibu || ''}</td>
          </tr>`).join('')}
       `;
       CervejaDiv.innerHTML = `<table>${itensHtml}</table>`;

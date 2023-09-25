@@ -21,10 +21,10 @@ let cervejas = [
 
 
 let isNomeExibido = false;
-const CervejaDiv = document.getElementById("nomeCervejaDiv");
 
 
-const carregarDiv = (cervejasArray) =>{
+const carregarDiv = (cervejasArray, id="CervejaDiv") =>{
+   const CervejaDiv = document.getElementById(id);
    if (isNomeExibido) {
       CervejaDiv.style.opacity = 0;
       setTimeout(() => {

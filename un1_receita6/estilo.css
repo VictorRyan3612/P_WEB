@@ -8,6 +8,10 @@ table {
     border-collapse: collapse; /* Colapso das bordas da tabela */
 }
 
+#CervejaDiv {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
 .cerveja {
     color: rgb(40, 40, 38);
     height: 40px;

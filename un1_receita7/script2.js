@@ -1,8 +1,8 @@
 let cervejas = []
 //cs é um array de cervejas
-const carregarDiv = cs => {
-   const div = document.getElementById("cervejasDiv")
-   const itensHtml = cs.map(({ name, alcohol }) => `<div>${name} -- ${alcohol}</div>`)
+const carregarDiv = (cervejasArray, id="cervejasDiv") => {
+   const div = document.getElementById(id)
+   const itensHtml = cervejasArray.map(({ name, alcohol }) => `<div>${name} -- ${alcohol}</div>`)
    div.innerHTML = `${itensHtml.join("\n")}`
 }
 async function carregarCervejas(){

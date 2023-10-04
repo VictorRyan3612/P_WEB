@@ -1,7 +1,8 @@
 let isNomeExibido = false
-let cervejas = []
-//cs é um array de cervejas
-const carregarDiv = (cervejasArray, id="cervejasDiv", cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"]) => {
+let array = []
+
+
+const carregarDivCervejas = (array, id="DivTabela", cabecalhos = ["Nome", "Álcool", "Estilo", "Amargor"]) => {
    const div = document.getElementById(id)
    if (isNomeExibido) {
       div.style.opacity = 0;
@@ -11,14 +12,14 @@ const carregarDiv = (cervejasArray, id="cervejasDiv", cabecalhos = ["Nome", "Ál
    } else {
       setTimeout(() => {
          let itensHtml = `
-            <tr class="cerveja_colunas">
+            <tr class="colunas">
                <th>${cabecalhos[0]}</th>
                <th>${cabecalhos[1]}</th>
                <th>${cabecalhos[2]}</th>
                <th>${cabecalhos[3]}</th>
             </tr>
-            ${cervejasArray.map(item =>`
-            <tr class="cerveja">
+            ${array.map(item =>`
+            <tr class="itemRow">
                <td>${item.name || ''}</td>
                <td>${item.alcohol || ''}</td>
                <td>${item.style || ''}</td>
@@ -35,12 +36,12 @@ const carregarDiv = (cervejasArray, id="cervejasDiv", cabecalhos = ["Nome", "Ál
 async function carregarCervejas(){
    try{
       let res = await fetch("https://random-data-api.com/api/v2/beers?size=10")
-      cervejas = await res.json()
-      carregarDiv(cervejas)
+      array = await res.json()
+      carregarDivCervejas(array)
    }catch(err){
-      document.getElementById("cervejasDiv").innerHTML = "Aconteceu alguma problema..."
+      document.getElementById("DivTabela").innerHTML = "Aconteceu alguma problema..."
    }
 }
 
-const botaoCarregar = document.getElementById("botaoCarregar");
-botaoCarregar.addEventListener("click", () => carregarCervejas());
+const varBotaoCarregarCervejas = document.getElementById("botaoCarregarCervejas");
+varBotaoCarregarCervejas.addEventListener("click", () => carregarCervejas());

@@ -65,6 +65,36 @@ const carregarDivCafe = (array, id="DivTabela", cabecalhos = ["Nome", "Origem", 
    isNomeExibido = !isNomeExibido;
 }
 
+const carregarDivNacoes = (array, id="DivTabela", cabecalhos = ["Nationalidade", "Lingua", "Capital", "Esporte nacional"]) => {
+   const div = document.getElementById(id)
+   if (isNomeExibido) {
+      div.style.opacity = 0;
+      setTimeout(() => {
+         div.innerHTML = '';
+      }, 500);
+   } else {
+      setTimeout(() => {
+         let itensHtml = `
+            <tr class="colunas">
+               <th>${cabecalhos[0]}</th>
+               <th>${cabecalhos[1]}</th>
+               <th>${cabecalhos[2]}</th>
+               <th>${cabecalhos[3]}</th>
+            </tr>
+            ${array.map(item =>`
+            <tr class="itemRow">
+               <td>${item.nationality || ''}</td>
+               <td>${item.language || ''}</td>
+               <td>${item.capital || ''}</td>
+               <td>${item.national_sport || ''}</td>
+            </tr>`).join('')}
+         `;
+         div.innerHTML = `<table>${itensHtml}</table>`;
+         div.style.opacity = 1;
+      }, 1);
+   };
+   isNomeExibido = !isNomeExibido;
+}
 
 
 async function carregarCervejas(){
@@ -87,9 +117,23 @@ async function carregarCafes(){
    }
 }
 
+
+async function carregarNacoes(){
+   try{
+      let res = await fetch("https://random-data-api.com/api/nation/random_nation?size=10")
+      array = await res.json()
+      carregarDivNacoes(array)
+   }catch(err){
+      document.getElementById("DivTabela").innerHTML = "Aconteceu alguma problema..."
+   }
+}
+
 const varBotaoCarregarCervejas = document.getElementById("botaoCarregarCervejas");
 varBotaoCarregarCervejas.addEventListener("click", () => carregarCervejas());
 
 
 const varBotaoCarregarCafes = document.getElementById("botaoCarregarCafes");
 varBotaoCarregarCafes.addEventListener("click", () => carregarCafes());
+
+const varBotaoCarregarNacoes = document.getElementById("botaoCarregarNacoes");
+varBotaoCarregarNacoes.addEventListener("click", () => carregarNacoes());

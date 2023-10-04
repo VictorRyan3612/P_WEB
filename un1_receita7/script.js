@@ -34,7 +34,7 @@ const carregarDiv = (cervejasArray, id="cervejasDiv", cabecalhos = ["Nome", "Ál
 
 async function carregarCervejas(){
    try{
-      let res = await fetch("https://random-data-api.com/api/v2/beers?size=3")
+      let res = await fetch("https://random-data-api.com/api/v2/beers?size=10")
       cervejas = await res.json()
       carregarDiv(cervejas)
    }catch(err){

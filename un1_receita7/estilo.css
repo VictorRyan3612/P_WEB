@@ -8,7 +8,7 @@ table {
     border-collapse: collapse; /* Colapso das bordas da tabela */
 }
 
-#CervejaDiv {
+#cervejasDiv {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }

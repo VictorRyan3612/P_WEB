@@ -10,8 +10,23 @@ const carregarDiv = (cervejasArray, id="cervejasDiv", cabecalhos = ["Nome", "Ál
       }, 500);
    } else {
       setTimeout(() => {
-         const itensHtml = cervejasArray.map(({ name, alcohol }) => `<div>${name} -- ${alcohol}</div>`)
-         div.innerHTML = `${itensHtml.join("\n")}`
+         let itensHtml = `
+            <tr class="cerveja_colunas">
+               <th>${cabecalhos[0]}</th>
+               <th>${cabecalhos[1]}</th>
+               <th>${cabecalhos[2]}</th>
+               <th>${cabecalhos[3]}</th>
+            </tr>
+            ${cervejasArray.map(item =>`
+            <tr class="cerveja">
+               <td>${item.name || ''}</td>
+               <td>${item.alcohol || ''}</td>
+               <td>${item.style || ''}</td>
+               <td>${item.ibu || ''}</td>
+            </tr>`).join('')}
+         `;
+         div.innerHTML = `<table>${itensHtml}</table>`;
+         div.style.opacity = 1;
       }, 1);
    };
    isNomeExibido = !isNomeExibido;
@@ -26,5 +41,6 @@ async function carregarCervejas(){
       document.getElementById("cervejasDiv").innerHTML = "Aconteceu alguma problema..."
    }
 }
-let botao = document.getElementById("botaoCarregar")
-botao.addEventListener("click", () => carregarCervejas())
+
+const botaoCarregar = document.getElementById("botaoCarregar");
+botaoCarregar.addEventListener("click", () => carregarCervejas());

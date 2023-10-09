@@ -120,19 +120,15 @@ async function carregarNacoes(){
 }
 
 
-function chegouRespostaDoJson(json){
-   cervejas = json
-   carregarDivGenerico(cervejas, opcao=1)         
-}
-
-function chegouRespostaDoFetch(res){
-   let p = res.json()
-   p.then(chegouRespostaDoJson)
-}
-
 function carregarCervejas2(){
-   let p = fetch("https://random-data-api.com/api/v2/beers?size=10")
-   p.then(chegouRespostaDoFetch)
+   fetch("https://random-data-api.com/api/v2/beers?size=10").then(
+      res => res.json()
+   ).then(
+      json => carregarDivGenerico(json, opcao=1)
+   ).catch(
+      err => document.getElementById("DivTabela").innerHTML = `Fudeu... ${err}`
+   )
+   
    document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
 }
 

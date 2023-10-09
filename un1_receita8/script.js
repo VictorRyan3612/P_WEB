@@ -119,14 +119,21 @@ async function carregarNacoes(){
    }
 }
 
+
+function chegouRespostaDoJson(json){
+   cervejas = json
+   carregarDivGenerico(cervejas, opcao=1)         
+}
+
 function chegouRespostaDoFetch(res){
-   document.getElementById("DivTabela2").innerHTML = `Resposta do fetch() -- ${res}`
+   let p = res.json()
+   p.then(chegouRespostaDoJson)
 }
 
 function carregarCervejas2(){
    let p = fetch("https://random-data-api.com/api/v2/beers?size=10")
    p.then(chegouRespostaDoFetch)
-   document.getElementById("DivTabela2").innerHTML = `Fazendo requisição`          
+   document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
 }
 
 const varBotaoCarregarCervejas2 = document.getElementById("botaoCarregarCervejas2");

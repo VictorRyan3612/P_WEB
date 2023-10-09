@@ -119,6 +119,19 @@ async function carregarNacoes(){
    }
 }
 
+function chegouRespostaDoFetch(res){
+   document.getElementById("DivTabela2").innerHTML = `Resposta do fetch() -- ${res}`
+}
+
+function carregarCervejas2(){
+   let p = fetch("https://random-data-api.com/api/v2/beers?size=10")
+   p.then(chegouRespostaDoFetch)
+   document.getElementById("DivTabela2").innerHTML = `Fazendo requisição`          
+}
+
+const varBotaoCarregarCervejas2 = document.getElementById("botaoCarregarCervejas2");
+varBotaoCarregarCervejas2.addEventListener("click", () => carregarCervejas2());
+
 const varBotaoCarregarCervejas = document.getElementById("botaoCarregarCervejas");
 varBotaoCarregarCervejas.addEventListener("click", () => carregarCervejas());
 

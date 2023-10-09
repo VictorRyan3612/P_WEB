@@ -1,0 +1,36 @@
+body {
+   background-color: #333; /* Cor de fundo escura */
+   color: #fff; /* Cor do texto */
+}
+
+table {
+   width: 100%; /* Largura total da tabela */
+   border-collapse: collapse; /* Colapso das bordas da tabela */
+}
+
+#DivTabela {
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out;
+}
+.itemRow {
+   color: rgb(40, 40, 38);
+   height: 40px;
+   font-size: 30px;
+   background-color: #fc3c3c; /* Cor de fundo das células das cervejas */
+   padding: 10px; /* Espaçamento interno */
+   border: 1px solid #ddd; /* Borda das células */
+   text-align: center; /* Alinhamento central do texto */
+}
+
+.colunas {
+   color: rgb(40, 40, 38);
+   height: 40px;
+   font-size: 40px;
+   background-color: #019022; /* Cor de fundo das células das cervejas */
+   padding: 10px; /* Espaçamento interno */
+   border: 1px solid #ddd; /* Borda das células */
+   text-align: center; /* Alinhamento central do texto */
+}
+.itemRow:nth-child(even) {
+   background-color: #0c57c0; /* Cor de fundo alternada para células pares */
+}

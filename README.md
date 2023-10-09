@@ -3,6 +3,7 @@ Repositório exclusivo para disciplina Programação Web
 
 ## Links para receitas
 
+### Unidade 1
 [Receita 1](https://sites.google.com/view/fabricio10/página-inicial/cursos/pweb/html-básico?authuser=0)
 
 
@@ -15,3 +16,7 @@ Repositório exclusivo para disciplina Programação Web
 [Receita 5](https://sites.google.com/view/fabricio10/página-inicial/cursos/pweb/js-arrow?authuser=0)
 
 [Receita 6](https://sites.google.com/view/fabricio10/página-inicial/cursos/pweb/json4?authuser=0)
+
+[Receita 7](https://sites.google.com/view/fabricio10/página-inicial/cursos/pweb/json5?authuser=0)
+
+[Receita 8](https://sites.google.com/view/fabricio10/página-inicial/cursos/pweb/promise?authuser=0)

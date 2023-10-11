@@ -107,7 +107,6 @@ async function carregarCafes(){
    }
 }
 
-let urlLink="https://random-data-api.com/api/nation/random_nation"
 async function carregarNacoes(){
 
    try{
@@ -119,7 +118,7 @@ async function carregarNacoes(){
    }
 }
 
-
+// Botões 2 
 function carregarCervejas2(){
    fetch("https://random-data-api.com/api/v2/beers?size=10").then(
       res => res.json()
@@ -132,9 +131,32 @@ function carregarCervejas2(){
    document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
 }
 
-const varBotaoCarregarCervejas2 = document.getElementById("botaoCarregarCervejas2");
-varBotaoCarregarCervejas2.addEventListener("click", () => carregarCervejas2());
+function carregarCafes2(){
+   fetch("https://random-data-api.com/api/coffee/random_coffee?size=10").then(
+      res => res.json()
+   ).then(
+      json => carregarDivGenerico(json, opcao=2)
+   ).catch(
+      err => document.getElementById("DivTabela").innerHTML = `Fudeu... ${err}`
+   )
+   
+   document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
+}
 
+function carregarNacoes2(){
+   fetch("https://random-data-api.com/api/nation/random_nation?size=10").then(
+      res => res.json()
+   ).then(
+      json => carregarDivGenerico(json, opcao=3)
+   ).catch(
+      err => document.getElementById("DivTabela").innerHTML = `Fudeu... ${err}`
+   )
+   
+   document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
+}
+
+
+// Botões 2 
 const varBotaoCarregarCervejas = document.getElementById("botaoCarregarCervejas");
 varBotaoCarregarCervejas.addEventListener("click", () => carregarCervejas());
 
@@ -144,3 +166,15 @@ varBotaoCarregarCafes.addEventListener("click", () => carregarCafes());
 
 const varBotaoCarregarNacoes = document.getElementById("botaoCarregarNacoes");
 varBotaoCarregarNacoes.addEventListener("click", () => carregarNacoes());
+
+
+// Botões 2
+const varBotaoCarregarCervejas2 = document.getElementById("botaoCarregarCervejas2");
+varBotaoCarregarCervejas2.addEventListener("click", () => carregarCervejas2());
+
+const varBotaoCarregarCafes2 = document.getElementById("botaoCarregarCafes2");
+varBotaoCarregarCafes2.addEventListener("click", () => carregarCafes2());
+
+const varBotaoCarregarNacoes2 = document.getElementById("botaoCarregarNacoes2");
+varBotaoCarregarNacoes2.addEventListener("click", () => carregarNacoes2());
+

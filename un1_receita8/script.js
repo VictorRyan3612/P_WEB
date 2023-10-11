@@ -155,8 +155,19 @@ function carregarNacoes2(){
    document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
 }
 
+function carregar2Generico(link, opcao){
+   fetch(link).then(
+      res => res.json()
+   ).then(
+      json => carregarDivGenerico(json, opcao)
+   ).catch(
+      err => document.getElementById("DivTabela").innerHTML = `Fudeu... ${err}`
+   )
+   
+   document.getElementById("DivTabela").innerHTML = `Fazendo requisição`          
+}
 
-// Botões 2 
+// Botões 1
 const varBotaoCarregarCervejas = document.getElementById("botaoCarregarCervejas");
 varBotaoCarregarCervejas.addEventListener("click", () => carregarCervejas());
 
@@ -170,11 +181,11 @@ varBotaoCarregarNacoes.addEventListener("click", () => carregarNacoes());
 
 // Botões 2
 const varBotaoCarregarCervejas2 = document.getElementById("botaoCarregarCervejas2");
-varBotaoCarregarCervejas2.addEventListener("click", () => carregarCervejas2());
+varBotaoCarregarCervejas2.addEventListener("click", () => carregar2Generico("https://random-data-api.com/api/v2/beers?size=10", 1));
 
 const varBotaoCarregarCafes2 = document.getElementById("botaoCarregarCafes2");
-varBotaoCarregarCafes2.addEventListener("click", () => carregarCafes2());
+varBotaoCarregarCafes2.addEventListener("click", () => carregar2Generico("https://random-data-api.com/api/coffee/random_coffee?size=10", 2));
 
 const varBotaoCarregarNacoes2 = document.getElementById("botaoCarregarNacoes2");
-varBotaoCarregarNacoes2.addEventListener("click", () => carregarNacoes2());
+varBotaoCarregarNacoes2.addEventListener("click", () => carregar2Generico("https://random-data-api.com/api/nation/random_nation?size=10", 3));
 

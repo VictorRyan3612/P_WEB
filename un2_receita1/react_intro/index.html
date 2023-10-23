@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Receita 9</title>
+      <link href="estilo.css" rel="stylesheet">
+   </head>
+   <body>
+      <div id="app">
+      </div>
+
+      <div id="app2">
+      </div>
+
+      <table>
+         <tr>
+            <td>Opa</td>
+            <td>Opa2</td>
+         </tr>
+      </table>
+
+      <script src="libs/react.js"></script>
+      <script src="libs/react-dom.js"></script>
+
+      <script>
+
+         ReactDOM.render(
+            React.createElement(
+               'h1',
+               {id: 'my-heading'},
+               React.createElement(
+                  'span',
+                  null,
+                  'React ',
+                  React.createElement('em', null, 'é muito'),
+               ),
+               ' massa!'
+            ),
+            document.getElementById('app')
+         );
+
+         ReactDOM.render(
+            React.createElement(
+               'table', 
+               null,
+               React.createElement(
+                  'tr',
+                  null,
+                  React.createElement(
+                     'td', 
+                     null,
+                     'Opa'
+                  ),
+                  React.createElement(
+                     'td', 
+                     null,
+                     'Opa2'
+                  )
+               )
+            ),
+            document.getElementById('app2')
+         )
+
+
+      </script>
+   </body>
+</html>

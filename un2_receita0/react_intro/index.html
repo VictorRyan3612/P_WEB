@@ -9,14 +9,13 @@
       <div id="app2">
       </div>
 
-      <table>
+      <div id="app2">
+      </div>
+
+      <table style="border-collapse: collapse; width: 50%;">
          <tr>
-            <td>
-               Opa
-            </td>
-            <td>
-               Opa2
-            </td>
+            <td style="border: 1px solid #000; padding: 8px; text-align: center;">Opa</td>
+            <td style="border: 1px solid #000; padding: 8px; text-align: center;">Opa2</td>
          </tr>
       </table>
 
@@ -41,10 +40,22 @@
          );
 
          ReactDOM.render(
-            React.createElement('table', null,
-               React.createElement('tr', null,
-                  React.createElement('td', null, 'Opa'),
-                  React.createElement('td', null, 'Opa2'),
+            React.createElement(
+               'table', 
+               {style: { borderCollapse: 'collapse', width: '50%'}},
+               React.createElement(
+                  'tr',
+                  null,
+                  React.createElement(
+                     'td', 
+                     {style: {border: '1px solid #000', padding: '8px', textAlign: 'center'}}, 
+                     'Opa'
+                  ),
+                  React.createElement(
+                     'td', 
+                     {style: {border: '1px solid #000', padding: '8px', textAlign: 'center'}},
+                     'Opa2'
+                  )
                )
             ),
             document.getElementById('app2')

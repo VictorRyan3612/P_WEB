@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Receita 9</title>
+      <title>Receita 10</title>
       <link href="estilo.css" rel="stylesheet">
    </head>
    <body>
@@ -15,23 +15,29 @@
 
       <script type="text/babel">
 
+         const TabelaBebidas = () => {
+            console.log("Entrou aqui")
+            return(
+               <div id="app">
+                  <table id="tabela" border="1">
+                     <thead>
+                        <tr>
+                           <th>Nome</th>
+                           <th>Marca</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Havana</td>
+                           <td>Engenho Anísio Santiago</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               )
+         }
          ReactDOM.render(
-            <div id="app">
-               <table id="tabela" border="1">
-                  <thead>
-                     <tr>
-                        <th>Nome</th>
-                        <th>Marca</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>Havana</td>
-                        <td>Engenho Anísio Santiago</td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
+            <TabelaBebidas/>
             ,
             document.getElementById("app"))
 

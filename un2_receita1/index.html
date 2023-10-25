@@ -12,8 +12,28 @@
       <script src="libs/react-dom.js"></script>
       <script src="libs/babel.js"></script>
 
-
       <script type="text/babel">
+         let cervejas = [
+            {
+               name: "Guiness",
+               alcohol: "10%",
+               style: "Red Ale",
+               ibu: "15"
+            }, 
+            {
+               name: "Desperados",
+               alcohol: "6%",
+               style: "English IPA",
+               ibu: "30"
+            }, 
+            {
+               name: "Becks",
+               alcohol: "5%",
+               style: "Imperial Stout",
+               ibu: "45"
+            },
+         ]
+
          const Cabecalho = () => {
             return (
                <h1>
@@ -26,28 +46,33 @@
             console.log("Entrou em tabelabebidas")
             return (
                <div id="app">
-                  <Cabecalho/>
+                  <Cabecalho />
                   <table id="tabela" border="1">
                      <thead>
                         <tr>
                            <th>Nome</th>
-                           <th>Marca</th>
+                           <th>Teor Alcoólico</th>
+                           <th>Estilo</th>
+                           <th>IBU</th>
                         </tr>
                      </thead>
                      <tbody>
-                        <tr>
-                           <td>Havana</td>
-                           <td>Engenho Anísio Santiago</td>
-                        </tr>
+                        {cervejas.map((cerveja, index) => (
+                           <tr key={index}>
+                              <td>{cerveja.name}</td>
+                              <td>{cerveja.alcohol}</td>
+                              <td>{cerveja.style}</td>
+                              <td>{cerveja.ibu}</td>
+                           </tr>
+                        ))}
                      </tbody>
                   </table>
                </div>
             )
          }
 
-
          ReactDOM.render(
-            <TabelaBebidas/>
+            <TabelaBebidas />
             ,
             document.getElementById("app"))
       </script>

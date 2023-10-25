@@ -51,11 +51,10 @@
          const TabelaBebidas = () => {
             console.log("Entrou em tabelabebidas")
             return (
-               <div id="app">
-                  <Cabecalho />
+               <div id="Divtabela">
                   <table id="tabela" border="1">
                      <thead>
-                        <tr>
+                        <tr class= 'colunas'>
                            <th>Nome</th>
                            <th>Teor Alcoólico</th>
                            <th>Estilo</th>
@@ -64,7 +63,7 @@
                      </thead>
                      <tbody>
                         {cervejas.map((cerveja, index) => (
-                           <tr key={index}>
+                           <tr class ='itemRow' key={index}>
                               <td>{cerveja.name}</td>
                               <td>{cerveja.alcohol}</td>
                               <td>{cerveja.style}</td>
@@ -76,9 +75,14 @@
                </div>
             )
          }
+
          const rederizarTabela = () => {
             ReactDOM.render(
-               <TabelaBebidas />
+               <div>
+                  <Cabecalho />
+                  <TabelaBebidas />   
+               </div>
+               
                ,
                document.getElementById("app"))
          }

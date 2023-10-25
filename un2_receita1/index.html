@@ -14,11 +14,19 @@
 
 
       <script type="text/babel">
+         const Cabecalho = () => {
+            return (
+               <h1>
+                  Minha tabela de bebidas
+               </h1>
+            )
+         }
 
          const TabelaBebidas = () => {
-            console.log("Entrou aqui")
-            return(
+            console.log("Entrou em tabelabebidas")
+            return (
                <div id="app">
+                  <Cabecalho/>
                   <table id="tabela" border="1">
                      <thead>
                         <tr>
@@ -34,14 +42,14 @@
                      </tbody>
                   </table>
                </div>
-               )
+            )
          }
+
+
          ReactDOM.render(
             <TabelaBebidas/>
             ,
             document.getElementById("app"))
-
       </script>
-
    </body>
 </html>

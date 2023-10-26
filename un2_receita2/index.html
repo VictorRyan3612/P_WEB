@@ -48,33 +48,63 @@
             )
          }
 
-         const TabelaBebidas = () => {
-            console.log("Entrou em tabelabebidas")
-            return (
-               <div id="Divtabela">
-                  <table id="tabela" border="1">
-                     <thead>
-                        <tr class= 'colunas'>
-                           <th>Nome</th>
-                           <th>Teor Alcoólico</th>
-                           <th>Estilo</th>
-                           <th>IBU</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        {cervejas.map((cerveja, index) => (
-                           <tr class ='itemRow' key={index}>
-                              <td>{cerveja.name}</td>
-                              <td>{cerveja.alcohol}</td>
-                              <td>{cerveja.style}</td>
-                              <td>{cerveja.ibu}</td>
+         // const TabelaBebidas = () => {
+         //    console.log("Entrou em tabelabebidas")
+         //    return (
+         //       <div id="Divtabela">
+         //          <table id="tabela" border="1">
+         //             <thead>
+         //                <tr class= 'colunas'>
+         //                   <th>Nome</th>
+         //                   <th>Teor Alcoólico</th>
+         //                   <th>Estilo</th>
+         //                   <th>IBU</th>
+         //                </tr>
+         //             </thead>
+         //             <tbody>
+         //                {cervejas.map((cerveja, index) => (
+         //                   <tr class ='itemRow' key={index}>
+         //                      <td>{cerveja.name}</td>
+         //                      <td>{cerveja.alcohol}</td>
+         //                      <td>{cerveja.style}</td>
+         //                      <td>{cerveja.ibu}</td>
+         //                   </tr>
+         //                ))}
+         //             </tbody>
+         //          </table>
+         //       </div>
+         //    )
+         // }
+         
+         class TabelaBebidas extends React.Component {
+            render(){            
+               return (
+                  <div id="Divtabela">
+                     <table id="tabela" border="1">
+                        <thead>
+                           <tr class= 'colunas'>
+                              <th>Nome</th>
+                              <th>Teor Alcoólico</th>
+                              <th>Estilo</th>
+                              <th>IBU</th>
                            </tr>
-                        ))}
-                     </tbody>
-                  </table>
-               </div>
-            )
-         }
+                        </thead>
+                        <tbody>
+                           {cervejas.map((cerveja, index) => (
+                              <tr class ='itemRow' key={index}>
+                                 <td>{cerveja.name}</td>
+                                 <td>{cerveja.alcohol}</td>
+                                 <td>{cerveja.style}</td>
+                                 <td>{cerveja.ibu}</td>
+                              </tr>
+                           ))}
+                        </tbody>
+                     </table>
+                  </div>
+               )
+            }
+      }
+
 
          const rederizarTabela = () => {
             ReactDOM.render(

@@ -77,9 +77,12 @@
          // }
          
          class TabelaBebidas extends React.Component {
-            render(){            
+            render() {
+               const { titulo } = this.props; // Obtemos o título da propriedade
+
                return (
                   <div id="Divtabela">
+                     <h1>{titulo}</h1>
                      <table id="tabela" border="1">
                         <thead>
                            <tr class= 'colunas'>
@@ -101,10 +104,11 @@
                         </tbody>
                      </table>
                   </div>
-               )
+               );
             }
-      }
-      
+         }
+
+
       class Rodape extends React.Component {
          render() {
             return (
@@ -121,7 +125,10 @@
             ReactDOM.render(
                <div>
                   <Cabecalho />
-                  <TabelaBebidas />   
+                  <TabelaBebidas titulo="Tabela de Cervejas" />
+                  <TabelaBebidas titulo="Tabela de Bebidas Alcoólicas" />
+                  <TabelaBebidas titulo="Beer table" />
+   
                   <Rodape />
                </div>
                

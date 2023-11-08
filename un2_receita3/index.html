@@ -24,15 +24,23 @@
                         </tr>
                      </thead>
                      <tbody>
-                        {corpo.map((nos, index) =>(
-                           <td>{nos}</td>
+                        {corpo.map((linha, index) =>(
+                           <tr>
+                              {linha.map((celula) => (
+                                 <td>{celula}</td>
+                              ))}
+                           </tr>
                         ))}
                      </tbody>
                   </table>
                </div>
             )  
          }
-         const valoresCorpo = ["valor1", "valor2", "valor3", "valor4"]
+         const valoresCorpo = [
+            ["Bebida1", "Marca1", "valor1.1", "valor1.2"],
+            ["Bebida2", "Marca2", "valor2.1", "valor2.2"],
+            ["Bebida3", "Marca3", "valor3.1", "valor3.2"],
+         ]
          const valoresCabecalhos = ["Nome", "Marca", "teste1", "teste2"]
          ReactDOM.render(
             <TabelaBebidas titulo="minha tabela de cana" cabecalhos={valoresCabecalhos} corpo={valoresCorpo}/>

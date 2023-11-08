@@ -6,15 +6,16 @@
    <body>
       <div id="app">
       </div>
-      <script src="libs/react.js"/>
-      <script src="libs/react-dom.js"/>
-      <script src="libs/babel.js"/>
+      <script src="libs/react.js"></script>
+      <script src="libs/react-dom.js"></script>
+      <script src="libs/babel.js"></script>
       <script type="text/babel">
          
-         const TabelaBebidas = () => {
+         const TabelaBebidas = ({titulo, subtitulo}) => {
             return (
                <div>
-                  <h1>Tabela de Bebidas</h1>
+                  <h1>{titulo}</h1>
+                  <h2>{subtitulo}</h2>
                   <table id="tabela" border="1">
                      <thead>
                         <tr><th>Nome</th><th>Marca</th></tr>
@@ -27,7 +28,7 @@
             )  
          }
          ReactDOM.render(
-            <TabelaBebidas/>
+            <TabelaBebidas titulo="minha tabela de cana" subtitulo="só as melhores"/>
             ,
             document.getElementById("app"))
       </script>

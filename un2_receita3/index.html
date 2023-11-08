@@ -11,7 +11,7 @@
       <script src="libs/babel.js"></script>
       <script type="text/babel">
          
-         const TabelaBebidas = ({titulo, cabecalhos:{cabecalho1,cabecalho2}}) => {
+         const TabelaBebidas = ({titulo, cabecalhos:[cabecalho1,cabecalho2]}) => {
             return (
                <div>
                   <h1>{titulo}</h1>
@@ -26,7 +26,7 @@
                </div>
             )  
          }
-         const valoresCabecalhos = {cabecalho1: "Nome", cabecalho2: "Marca"}
+         const valoresCabecalhos = ["Nome", "Marca"]
          ReactDOM.render(
             <TabelaBebidas titulo="minha tabela de cana" cabecalhos={valoresCabecalhos}/>
             ,

@@ -11,13 +11,13 @@
       <script src="libs/babel.js"></script>
       <script type="text/babel">
          
-         const TabelaBebidas = ({titulo, cabecalhos}) => {
+         const TabelaBebidas = ({titulo, cabecalhos:{cabecalho1,cabecalho2}}) => {
             return (
                <div>
                   <h1>{titulo}</h1>
                   <table id="tabela" border="1">
                      <thead>
-                        <tr><th>{cabecalhos.cabecalho1}</th><th>{cabecalhos.cabecalho2}</th></tr>
+                        <tr><th>{cabecalho1}</th><th>{cabecalho2}</th></tr>
                      </thead>
                      <tbody>
                         <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>

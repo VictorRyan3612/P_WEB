@@ -1,9 +1,12 @@
-export default function Home(){
+import React from 'react';
+import {Home} from './home';
+import {OutroComponente} from './helloWorld';
+
+export default function App(){
    return (
       <div>
-         <h2>
-            Viva Santana!
-         </h2>
+         <Home />
+         <OutroComponente/>
       </div>
    )
 }

@@ -1,9 +1,20 @@
 export default function Movies({data}){
    return (
       <div>
-         <div>
-            {data.Search.map((m) => <div>{m.Title} --- {m.Year}</div>  )}                
-         </div>
+         <center>
+            {data.Search.map((m) => 
+               <div> 
+                  <br></br>
+                  <h2>
+                     Titulo: {m.Title}
+                  </h2>
+                  <h3>
+                     ano: {m.Year}
+                  </h3>
+                  <img src={m.Poster} width="200"></img>
+               </div>  
+            )}                
+         </center>
       </div>
    )
 }

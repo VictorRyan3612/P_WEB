@@ -8,7 +8,6 @@ export default function App(){
          <h1>
             Receita 16
          </h1>
-
          </center>
       </div>
    )

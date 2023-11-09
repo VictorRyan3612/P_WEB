@@ -1,10 +1,10 @@
 import React from 'react';
 
-export  function Home(){
+export  function Titulo(){
    return (
       <div>
          <h2>
-            Viva Santana!
+            h2 Titulo
          </h2>
       </div>
    )

@@ -1,16 +1,7 @@
-export default function Principal(){
+export default function SubPage2(){
    return (
       <div>
-         <h1>Nova Página</h1>
-         <MariaPrea/>
+         <h2>Nova Página</h2>
       </div>
-   )
-}
-
-export function MariaPrea(){
-   return (
-      <h2>
-         Morreu Maria Preá...
-      </h2>
    )
 }

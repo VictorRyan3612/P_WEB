@@ -1,12 +1,10 @@
 import React from 'react';
-import {Home} from './home';
-import {OutroComponente} from './helloWorld';
+import {Titulo} from './home';
 
 export default function App(){
    return (
       <div>
-         <Home />
-         <OutroComponente/>
+         <Titulo />
       </div>
    )
 }

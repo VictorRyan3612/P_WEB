@@ -43,8 +43,14 @@ export default function Movies(){
    return (
       <div>
          <div>
-            {data.Search[0].Title} --- {data.Search[0].Year}                
+            {data.Search.map(transformar)}                
          </div>
       </div>
    )
 }
+
+function transformar(elemento){
+   return (<div>{elemento.Title} --- {elemento.Year}</div>)
+}
+
+

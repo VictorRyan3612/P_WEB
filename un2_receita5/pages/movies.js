@@ -1,22 +1,31 @@
 import { useState } from 'react';
 
-export default function Tela({data}){
+export default function Tela(){
+   const [movies, setMovies] = useState([]);
+
+   const handleSearch = async (searchTerm) => {
+      const res = await fetch(`http://www.omdbapi.com/?apikey=8740ecf&s=${searchTerm}`);
+      const data = await res.json();
+      setMovies(data.Search);
+   };
+
    return (
       <div>
          <center>
             <br></br>
-            <MoviePesquisar />
-            <Movies dataMovies={data}/>
+            <MoviePesquisar onSearch={handleSearch}  />
+            <Movies dataMovies={movies}/>
          </center>
       </div>
    )
 }
 
-export function MoviePesquisar({onSearch}) {
+
+export function MoviePesquisar({ onSearch }) {
    const [searchTerm, setSearchTerm] = useState('');
 
    const handleSearch = () => {
-      // onSearch(searchTerm);
+      onSearch(searchTerm);
    };
 
    return (
@@ -34,11 +43,14 @@ export function MoviePesquisar({onSearch}) {
    );
 }
 
+
+
 export function Movies({dataMovies}){
    return (
       <div>
          <center>
-            {dataMovies.Search.map((m) => 
+            {/* Validar se não é vazio */}
+            {dataMovies && dataMovies.map((m) => 
                <div> 
                   <br></br>
                   <h2>

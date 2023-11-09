@@ -1,10 +1,11 @@
-import {Titulo} from './home';
+import {Titulo, Corpo} from './home';
 
 export default function SubPage2(){
    return (
       <div>
          <Titulo tituloContent='Titulo de novaPagina'/>
-         <p>Nova Página</p>
+         <br></br>
+         <Corpo corpoContent='Conteudo de novaPagina'/>
       </div>
    )
 }

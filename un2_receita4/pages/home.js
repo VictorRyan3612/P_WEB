@@ -1,10 +1,10 @@
 import React from 'react';
 
-export  function Titulo(){
+export function Titulo({tituloContent}){
    return (
       <div>
          <h2>
-            h2 Titulo
+            {tituloContent}
          </h2>
       </div>
    )

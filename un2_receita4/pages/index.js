@@ -4,7 +4,7 @@ import {Titulo} from './home';
 export default function App(){
    return (
       <div>
-         <Titulo />
+         <Titulo tituloContent='Titulo Principal'/>
       </div>
    )
 }

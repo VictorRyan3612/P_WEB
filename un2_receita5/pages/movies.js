@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Tela(){
+export default function TelaMovies(){
    const [movies, setMovies] = useState([]);
 
    const handleSearch = async (searchTerm) => {
@@ -35,7 +35,7 @@ export function MoviePesquisar({ onSearch }) {
                type="text"
                value={searchTerm}
                onChange={(e) => setSearchTerm(e.target.value)}
-               placeholder="Digite o termo de busca"
+               placeholder="Digite o nome do filme"
             />
             <button onClick={handleSearch}>Pesquisar</button>
          </center>
@@ -52,7 +52,7 @@ export function Movies({dataMovies}){
             {/* Validar se não é vazio */}
             {dataMovies && dataMovies.map((m) => 
                <div> 
-                  <br></br>
+                  <br></br>                  
                   <h2>
                      Titulo: {m.Title}
                   </h2>
@@ -61,19 +61,8 @@ export function Movies({dataMovies}){
                   </h3>
                   <img src={m.Poster} width="200"></img>
                </div>  
-            )}                
+            )}
          </center>
       </div>
    )
-}
-export async function getServerSideProps(context){
-   const res = await fetch(`http://www.omdbapi.com/?apikey=8740ecf&s=Amor`)
-   const data = await res.json() 
-   
-   return {
-      props: { 
-         data
-      } 
-   }
-
 }

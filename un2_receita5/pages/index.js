@@ -1,16 +1,21 @@
 import React from 'react';
+import TelaMovies from './movies';
 
 
 export default function App(){
    return (
       <div>
-         <h2>
+         <center>
+         <h1>
             Receita 15
+         </h1>
+         <h2>
+            Pesquisa de Filmes
          </h2>
-
-         <p>
-            
-         </p>
+         </center>
+         
+         <TelaMovies />
+         
       </div>
    )
 }

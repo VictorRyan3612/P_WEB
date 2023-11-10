@@ -6,7 +6,7 @@ export default function App(){
       <div>
          <center>
          <h1>
-            Receita 16
+            Receita 17
          </h1>
          </center>
       </div>

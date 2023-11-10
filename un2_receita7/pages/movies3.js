@@ -8,7 +8,7 @@ export default function Movies3(){
 
    const onClickHandler = (e) => {
       e.preventDefault()
-      if (url === '') setUrl('http://www.omdbapi.com/?apikey=8740ecf&s=bagdad')
+      if (url === '') setUrl('http://www.omdbapi.com/?apikey=8740ecf&s=Amor')
 
       else setUrl('')
    }
@@ -33,8 +33,8 @@ async function theFetcher(url) {
 
 }
 export function TheMovies({data,show}){
-   if (!show) return (<div></div>)    
-   if (data.error) return (<div>falha na requisição</div>)
+   if (!show) return (<div></div>) 
+   if (data.error) return (console.log(data),<div>falha na requisição</div>)
    if (data.Search === '' ) return (<div>carregando...</div>)
    return (
       <div>

@@ -4,7 +4,7 @@ export default function TelaMovies(){
    const [movies, setMovies] = useState([]);
 
    const handleSearch = async (searchTerm) => {
-      const res = await fetch(`http://www.omdbapi.com/?apikey=8740ecf&s=${searchTerm}`);
+      const res = await fetch(`https://www.omdbapi.com/?apikey=8740ecf&s=${searchTerm}`);
       const data = await res.json();
       setMovies(data.Search);
    };

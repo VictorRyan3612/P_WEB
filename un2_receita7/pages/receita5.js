@@ -6,36 +6,28 @@ export default function App(){
       <div>
          <center>
             <h1>
-               Receitas Next 2ª unidade
+               Receita 5
             </h1>
             <a href="" target="_blank"> 
-               Receita 1
+               Movies 1
             </a>
             <br></br>
          
             <a href="" target="_blank"> 
-               Receita 2
+               Movies 2
             </a>
             <br></br>
             
          
             <a href="" target="_blank"> 
-               Receita 3
+               Movies 3
             </a>
             <br></br>
-
-
+         
             <a href="" target="_blank"> 
-               Receita 4
+               Movies Receita 4
             </a>
             <br></br>
-
-
-            <a href="" target="_blank"> 
-               Receita 5
-            </a>
-            <br></br>
-
             
          </center>
       </div>

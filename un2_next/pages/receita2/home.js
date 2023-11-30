@@ -9,3 +9,13 @@ export default function Titulo({tituloContent}){
       </div>
    )
 }
+
+export function Corpo({corpoContent}){
+   return(
+      <div>
+         <p>
+            {corpoContent}
+         </p>
+      </div>
+   )
+}
